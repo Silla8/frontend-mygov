@@ -59,6 +59,45 @@
         fontFamily: "Georgia, 'Times New Roman', Times, serif",
         alignItems: 'center',
         justifyContent: 'center'
+    }, 
+    RecoveryScreen: {
+        backgroundColor: "#336663", 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center',
+        fontFamily: "Georgia, 'Times New Roman', Times, serif",
+        color: 'white',
+        height: '100vh',
+
+    },
+    RecoverySection: {
+        backgroundColor: 'white',
+        color: "#336663",
+        borderRadius: 10,
+        border: "1px solid #EAEAEA",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        rowGap: 15,
+        margin: 30,
+        padding: 30,
+        width: '50%', 
+        height: '70%'
+    },
+    RecoveryForm: {
+        backgroundColor: 'white',
+        color: "#336663",
+        borderRadius: 10,
+        border: "1px solid #EAEAEA",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        rowGap: 25,
+        padding: 40,
+        width: '70%',
+
     }
    
 

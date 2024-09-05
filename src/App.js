@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import LoadingPage from './components/LoadingPage';
 import Details from './screen/Details';
 import Setting from './screen/Setting';
+import Recovery from './screen/Recovery';
 
 function App() {
 
@@ -50,6 +51,7 @@ useEffect(()=>{
             <Route exact path="/login" element={isActive ? <Navigate to="/home" /> : <Welcome setIsActive={setIsActive}/>}/>
             <Route exact path="/home/setting" element={isActive ? <Setting setIsActive={setIsActive} /> : <Navigate to={"/login"} />} />
             <Route exact path="/home/:path" element={isActive ? <Details setIsActive={setIsActive} /> : <Navigate to="/login" />}/>
+            <Route exact path="/password-recovery" element={ <Recovery />}/>
         </Routes>
       </div>
     </Router>

@@ -17,6 +17,7 @@ export default function LogSection({ setIsActive }){
     const [visible, setVisible]= useState(false);
     const [mouse, setMouse] = useState(false);
     const [loading, setLoading]= useState(false);
+    const [email, setEmail] = useState("");
 
 
     //Handler functions
@@ -28,10 +29,15 @@ export default function LogSection({ setIsActive }){
         setPassword(event.target.value);
     }
 
+    const handleEmail = (event)=>{
+        setEmail(event.target.value);
+    }
+
 
     const cleanUp= ()=>{
         setPassword("");
         setPin("");
+        setEmail("");
     }
     const submission = async (e)=>{
 
@@ -45,7 +51,7 @@ export default function LogSection({ setIsActive }){
                         'Accept': 'application/json',
                         'Content-Type': 'application/json',
                       },
-                    body: JSON.stringify({ pin, password })
+                    body: JSON.stringify(visible ? { pin, password, email } : { pin, password })
                 }).then(response => response.json()).then(data => {
         
                     if(data.token){
@@ -90,12 +96,14 @@ export default function LogSection({ setIsActive }){
 
                     <CustomInput type={'text'} name={'pin'} handler={handlePin} placeholder={'Unique identifier'} value={pin}/>
 
+                    {visible ? <CustomInput type={'email'} name={'email'} handler={handleEmail} placeholder={'Email address'} value={email} /> : null}
+                    
                     <CustomInput type={'password'} name={'password'} handler={handlePassword} placeholder={'Password'} value={password} />
                     
                     <CustomButton title={visible ? ' > Register' : ' > Log in'} loading={loading} width={100} fontSize={19}/>
                     
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '90%'}}>
-                       {visible ? null : <a href='http://localhost:3000' style={{color: '#336663', }}> 
+                       {visible ? null : <a href='/password-recovery' style={{color: '#336663', }}> 
                             <p style={{fontSize: 18, display: 'flex'}}>Forgot password</p>
                         </a>}
                         <span 
