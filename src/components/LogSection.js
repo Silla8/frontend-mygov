@@ -113,7 +113,7 @@ export default function LogSection({ setIsActive }){
                     <CustomButton title={visible ? ' > Register' : ' > Log in'} loading={loading} width={100} fontSize={19}/>
                     
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '90%'}}>
-                       {visible ? null : <span onMouseEnter={mouseOver1} onMouseLeave={mouseOff1} onClick={()=>navigate('/password-recovery')} style={{color: '#336663', textDecoration: mouse ? 'underline' :'none' }}> 
+                       {visible ? null : <span onMouseEnter={mouseOver1} onMouseLeave={mouseOff1} onClick={()=>navigate('/password-recovery')} style={{color: '#336663', textDecoration: mouse1 ? 'underline' :'none' }}> 
                             <p style={{fontSize: 18, display: 'flex'}}>Forgot password</p>
                         </span>}
                         <span 
