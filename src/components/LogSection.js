@@ -75,6 +75,13 @@ export default function LogSection({ setIsActive }){
         
     }
 
+     const mouseOver1 = ()=>{
+        setMouse(!mouse);
+    }
+
+    const mouseOff1= ()=>{
+        setMouse(!mouse);
+    }
     const mouseOver = ()=>{
         setMouse(!mouse);
     }
@@ -105,7 +112,7 @@ export default function LogSection({ setIsActive }){
                     <CustomButton title={visible ? ' > Register' : ' > Log in'} loading={loading} width={100} fontSize={19}/>
                     
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '90%'}}>
-                       {visible ? null : <span onMouseEnter={mouseOver} onMouseLeave={mouseOff} onClick={()=>navigate('/password-recovery')} style={{color: '#336663', textDecoration: mouse ? 'underline' :'none' }}> 
+                       {visible ? null : <span onMouseEnter={mouseOver1} onMouseLeave={mouseOff1} onClick={()=>navigate('/password-recovery')} style={{color: '#336663', textDecoration: mouse ? 'underline' :'none' }}> 
                             <p style={{fontSize: 18, display: 'flex'}}>Forgot password</p>
                         </span>}
                         <span 
