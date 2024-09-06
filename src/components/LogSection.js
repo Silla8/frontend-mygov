@@ -18,6 +18,7 @@ export default function LogSection({ setIsActive }){
     const [password, setPassword]= useState("");
     const [visible, setVisible]= useState(false);
     const [mouse, setMouse] = useState(false);
+    const [mouse1, setMouse1] = useState(false);
     const [loading, setLoading]= useState(false);
     const [email, setEmail] = useState("");
 
@@ -76,11 +77,11 @@ export default function LogSection({ setIsActive }){
     }
 
      const mouseOver1 = ()=>{
-        setMouse(!mouse);
+        setMouse1(!mouse1);
     }
 
     const mouseOff1= ()=>{
-        setMouse(!mouse);
+        setMouse1(!mouse1);
     }
     const mouseOver = ()=>{
         setMouse(!mouse);
