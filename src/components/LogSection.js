@@ -13,7 +13,7 @@ export default function LogSection({ setIsActive }){
 
 
     //React hooks
-    const navigate = useNavigate();
+    const navigate= useNavigate();
     const [pin, setPin]= useState("");
     const [password, setPassword]= useState("");
     const [visible, setVisible]= useState(false);
@@ -105,10 +105,7 @@ export default function LogSection({ setIsActive }){
                     <CustomButton title={visible ? ' > Register' : ' > Log in'} loading={loading} width={100} fontSize={19}/>
                     
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '90%'}}>
-                       {visible ? null : <span onClick={()=>navigate('/password-recovery')} 
-                            style={{color: '#336663', textDecoration: mouse ? 'underline' :'none'  }} 
-                            onMouseEnter={mouseOver} 
-                            onMouseLeave={mouseOff}> 
+                       {visible ? null : <span onMouseEnter={mouseOver} onMouseLeave={mouseOff} onClick={()=>navigate('/password-recovery')} style={{color: '#336663', textDecoration: mouse ? 'underline' :'none' }}> 
                             <p style={{fontSize: 18, display: 'flex'}}>Forgot password</p>
                         </span>}
                         <span 
