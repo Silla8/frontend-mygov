@@ -3,6 +3,7 @@ import { useState } from 'react';
 import CustomInput from './CustomInput';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -12,6 +13,7 @@ export default function LogSection({ setIsActive }){
 
 
     //React hooks
+    const navigate = useNavigate();
     const [pin, setPin]= useState("");
     const [password, setPassword]= useState("");
     const [visible, setVisible]= useState(false);
@@ -103,9 +105,12 @@ export default function LogSection({ setIsActive }){
                     <CustomButton title={visible ? ' > Register' : ' > Log in'} loading={loading} width={100} fontSize={19}/>
                     
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '90%'}}>
-                       {visible ? null : <a href='/password-recovery' style={{color: '#336663', }}> 
+                       {visible ? null : <span onClick={()=>navigate('/password-recovery')} 
+                            style={{color: '#336663', textDecoration: mouse ? 'underline' :'none'  }} 
+                            onMouseEnter={mouseOver} 
+                            onMouseLeave={mouseOff}> 
                             <p style={{fontSize: 18, display: 'flex'}}>Forgot password</p>
-                        </a>}
+                        </span>}
                         <span 
                             style={{color: '#336663', textDecoration: mouse ? 'underline' :'none'  }} 
                             onMouseEnter={mouseOver} 
